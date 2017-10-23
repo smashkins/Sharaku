@@ -88,14 +88,14 @@ public final class ContainerViewController: UIViewController {
             topBar.leftAnchor.constraint(equalTo: view.leftAnchor),
             topBar.rightAnchor.constraint(equalTo: view.rightAnchor),
             topBar.topAnchor.constraint(equalTo: view.topAnchor),
-            topBar.heightAnchor.constraint(equalToConstant: 44),
+            topBar.bottomAnchor.constraint(equalTo: view.safeTop, constant: 44),
 
             next.rightAnchor.constraint(equalTo: topBar.rightAnchor, constant: -10),
-            next.topAnchor.constraint(equalTo: topBar.topAnchor),
+            next.heightAnchor.constraint(equalToConstant: 44),
             next.bottomAnchor.constraint(equalTo: topBar.bottomAnchor),
 
             back.leftAnchor.constraint(equalTo: topBar.leftAnchor, constant: 10),
-            back.topAnchor.constraint(equalTo: topBar.topAnchor),
+            back.heightAnchor.constraint(equalToConstant: 44),
             back.bottomAnchor.constraint(equalTo: topBar.bottomAnchor)
         ])
 
@@ -109,15 +109,15 @@ public final class ContainerViewController: UIViewController {
             bottomTab.leftAnchor.constraint(equalTo: view.leftAnchor),
             bottomTab.rightAnchor.constraint(equalTo: view.rightAnchor),
             bottomTab.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            bottomTab.heightAnchor.constraint(equalToConstant: 44),
+            bottomTab.topAnchor.constraint(equalTo: view.safeBottom, constant: -44),
 
             filter.leftAnchor.constraint(equalTo: bottomTab.leftAnchor),
-            filter.bottomAnchor.constraint(equalTo: bottomTab.bottomAnchor),
+            filter.heightAnchor.constraint(equalToConstant: 44),
             filter.topAnchor.constraint(equalTo: bottomTab.topAnchor),
             filter.rightAnchor.constraint(equalTo: bottomTab.centerXAnchor),
 
             crop.leftAnchor.constraint(equalTo: bottomTab.centerXAnchor),
-            crop.bottomAnchor.constraint(equalTo: bottomTab.bottomAnchor),
+            crop.heightAnchor.constraint(equalToConstant: 44),
             crop.topAnchor.constraint(equalTo: bottomTab.topAnchor),
             crop.rightAnchor.constraint(equalTo: bottomTab.rightAnchor),
         ])
