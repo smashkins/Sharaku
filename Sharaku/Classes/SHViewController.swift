@@ -108,7 +108,7 @@ open class SHViewController: UIViewController {
         let filterName = filterNameList[filterIndex]
         if let image = self.image {
             let filteredImage = createFilteredImage(filterName: filterName, image: image)
-            imageView?.image = filteredImage
+            imageView?.image = filteredImage.fixOrientation()
         }
     }
 
@@ -227,5 +227,21 @@ extension  SHViewController: UICollectionViewDataSource, UICollectionViewDelegat
     func scrollCollectionViewToIndex(itemIndex: Int) {
         let indexPath = IndexPath(item: itemIndex, section: 0)
         self.collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+}
+
+extension UIImage {
+    func fixOrientation() -> UIImage {
+        if self.imageOrientation == UIImageOrientation.up {
+            return self
+        }
+        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
+        self.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
+        if let normalizedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
+            UIGraphicsEndImageContext()
+            return normalizedImage
+        } else {
+            return self
+        }
     }
 }
