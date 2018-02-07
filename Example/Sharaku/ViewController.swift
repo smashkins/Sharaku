@@ -23,12 +23,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @objc @IBAction func sharakuButtonTapped(_ sender: Any) {
-        let image = UIImage(named: "sample")
-        let vc = SHViewController(image: image!)
-        vc.delegate = self
-        present(vc, animated: true, completion: nil)
-    }
+//    @objc @IBAction func sharakuButtonTapped(_ sender: Any) {
+//        let image = UIImage(named: "sample")
+//        let vc = SHViewController(image: image!)
+//        vc.delegate = self
+//        present(vc, animated: true, completion: nil)
+//    }
 }
 
 extension ViewController: SHViewControllerDelegate {

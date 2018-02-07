@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,34 +23,73 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pk-NC-wc6">
-                                <rect key="frame" x="122.5" y="315" width="129" height="36"/>
+                                <rect key="frame" x="124.5" y="315.5" width="125" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Show Sharaku"/>
                                 <connections>
-                                    <action selector="sharakuButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MvV-pm-ccD"/>
+                                    <segue destination="9k9-we-Qjv" kind="show" id="IS5-Hl-bMG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Oc-bT-Sv9">
-                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Oc-bT-Sv9" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="5Ro-zA-Djb"/>
-                            <constraint firstItem="6Oc-bT-Sv9" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="EPX-Ee-B4o"/>
                             <constraint firstItem="9Pk-NC-wc6" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="P9h-Rr-FMw"/>
                             <constraint firstItem="9Pk-NC-wc6" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="ed8-Rf-Uld"/>
-                            <constraint firstItem="6Oc-bT-Sv9" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" id="fhP-4y-cLJ"/>
-                            <constraint firstItem="6Oc-bT-Sv9" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="stj-J1-0pM"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="imageView" destination="6Oc-bT-Sv9" id="JIH-xZ-3Ag"/>
-                        <outlet property="showSharokuButton" destination="9Pk-NC-wc6" id="NWa-sW-cJL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="278" y="33"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="KpQ-Lz-ceQ">
+            <objects>
+                <viewController id="9k9-we-Qjv" customClass="ViewController2" customModule="Sharaku_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fSi-nJ-FvV"/>
+                        <viewControllerLayoutGuide type="bottom" id="WqK-hf-TDU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h2Y-Z9-XlA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38H-ki-vOb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.011764705882352941" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxt-fb-9jQ">
+                                <rect key="frame" x="16" y="617" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nLH-cz-Dj9"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneTapped:" destination="9k9-we-Qjv" eventType="touchUpInside" id="Xwq-tB-SZh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.011764705882352941" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xxt-fb-9jQ" firstAttribute="top" secondItem="38H-ki-vOb" secondAttribute="bottom" constant="19" id="4sU-2p-Nri"/>
+                            <constraint firstItem="38H-ki-vOb" firstAttribute="top" secondItem="h2Y-Z9-XlA" secondAttribute="top" id="LJQ-9t-yit"/>
+                            <constraint firstItem="WqK-hf-TDU" firstAttribute="top" secondItem="xxt-fb-9jQ" secondAttribute="bottom" constant="20" id="SwR-xU-iFQ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xxt-fb-9jQ" secondAttribute="trailingMargin" id="VjH-Sb-kh6"/>
+                            <constraint firstAttribute="trailing" secondItem="38H-ki-vOb" secondAttribute="trailing" id="cAt-83-8xZ"/>
+                            <constraint firstItem="xxt-fb-9jQ" firstAttribute="leading" secondItem="h2Y-Z9-XlA" secondAttribute="leadingMargin" id="dKd-3t-6QS"/>
+                            <constraint firstItem="38H-ki-vOb" firstAttribute="leading" secondItem="h2Y-Z9-XlA" secondAttribute="leading" id="tJh-sh-EIU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="xxt-fb-9jQ" id="HbL-wU-yg2"/>
+                        <outlet property="galleryView" destination="38H-ki-vOb" id="3HV-kw-QrC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YqP-Pd-rfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1264.8" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>

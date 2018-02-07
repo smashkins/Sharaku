@@ -141,20 +141,34 @@ open class SHViewController: UIViewController {
         UIGraphicsEndImageContext()
         return resizedImage!
     }
-
-    @objc @IBAction func closeButtonTapped() {
+    
+    public func close(){
         if let delegate = self.delegate {
             delegate.shViewControllerDidCancel()
         }
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
     }
-
-    @objc @IBAction func doneButtontapped() {
+    
+    public func done(){
         if let delegate = self.delegate {
             delegate.shViewControllerImageDidFilter(image: (imageView?.image)!)
         }
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
     }
+
+//    @objc @IBAction func closeButtonTapped() {
+//        if let delegate = self.delegate {
+//            delegate.shViewControllerDidCancel()
+//        }
+//        dismiss(animated: true, completion: nil)
+//    }
+
+//    @objc @IBAction func doneButtontapped() {
+//        if let delegate = self.delegate {
+//            delegate.shViewControllerImageDidFilter(image: (imageView?.image)!)
+//        }
+//        dismiss(animated: true, completion: nil)
+//    }
 }
 
 extension  SHViewController: UICollectionViewDataSource, UICollectionViewDelegate
