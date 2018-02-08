@@ -128,10 +128,31 @@ open class SHViewController: UIViewController {
         
         // 5 - convert filtered CGImage to UIImage
         var filteredImage = UIImage(cgImage: outputCGImage!)
-        //let filteredImage = UIImage(cgImage: outputCGImage!, scale: 1.0, orientation: UIImageOrientation.down)
         //print(image.imageOrientation.hashValue)
-        if image.imageOrientation.hashValue == 1 {
+        switch image.imageOrientation {
+        case .down:
             filteredImage = UIImage(cgImage: filteredImage.cgImage!, scale: 1.0, orientation: UIImageOrientation.down)
+            break
+        case .right:
+            filteredImage = UIImage(cgImage: filteredImage.cgImage!, scale: 1.0, orientation: UIImageOrientation.right)
+            break
+        case .left:
+            filteredImage = UIImage(cgImage: filteredImage.cgImage!, scale: 1.0, orientation: UIImageOrientation.left)
+            break
+        case .downMirrored:
+            filteredImage = UIImage(cgImage: filteredImage.cgImage!, scale: 1.0, orientation: UIImageOrientation.downMirrored)
+            break
+        case .leftMirrored:
+            filteredImage = UIImage(cgImage: filteredImage.cgImage!, scale: 1.0, orientation: UIImageOrientation.leftMirrored)
+            break
+        case .rightMirrored:
+            filteredImage = UIImage(cgImage: filteredImage.cgImage!, scale: 1.0, orientation: UIImageOrientation.rightMirrored)
+            break
+        case .upMirrored:
+            filteredImage = UIImage(cgImage: filteredImage.cgImage!, scale: 1.0, orientation: UIImageOrientation.upMirrored)
+            break
+        default:
+            break
         }
         
         return filteredImage
